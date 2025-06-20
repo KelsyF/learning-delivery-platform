@@ -86,6 +86,7 @@ These are injected automatically into Spring Boot via environment variables in t
 
 ## Author
 Kelsy Frank
+
 M.S. in Computer Science | Learning Tech Enthusiast
 
 [LinkedIn](https://www.linkedin.com/in/kelsy-frank-36a20732a/)
