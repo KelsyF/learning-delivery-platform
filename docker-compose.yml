@@ -1,0 +1,36 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: learnhub-mysql
+    environment:
+      MYSQL_DATABASE: learnhub_db
+      MYSQL_USER: appuser
+      MYSQL_PASSWORD: app_pass
+      MYSQL_ROOT_PASSWORD: itsatrap
+    ports:
+      - "3306:3306"
+    volumes:
+      - learnhub_data:/var/lib/mysql
+    networks:
+      - learnhub-net
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - mysql
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/learnhub_db
+      SPRING_DATASOURCE_USERNAME: appuser
+      SPRING_DATASOURCE_PASSWORD: app_pass
+    ports:
+      - "8080:8080"
+    networks:
+      - learnhub-net
+
+volumes:
+  learnhub_data:
+
+networks:
+  learnhub-net: {}

@@ -1,0 +1,5 @@
+com\kelsyfrank\learning\model\User$UserBuilder.class
+com\kelsyfrank\learning\LearningPlatformApplication.class
+com\kelsyfrank\learning\model\User$Role.class
+com\kelsyfrank\learning\model\User.class
+com\kelsyfrank\learning\repository\UserRepository.class
