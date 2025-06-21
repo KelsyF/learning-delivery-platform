@@ -1,0 +1,15 @@
+C:\Users\Kelsy\Desktop\Resume-Cover Letters\Project-Examples\learning-delivery-platform\src\main\java\com\kelsyfrank\learning\config\DataSeeder.java
+C:\Users\Kelsy\Desktop\Resume-Cover Letters\Project-Examples\learning-delivery-platform\src\main\java\com\kelsyfrank\learning\controller\AuthController.java
+C:\Users\Kelsy\Desktop\Resume-Cover Letters\Project-Examples\learning-delivery-platform\src\main\java\com\kelsyfrank\learning\repository\UserRepository.java
+C:\Users\Kelsy\Desktop\Resume-Cover Letters\Project-Examples\learning-delivery-platform\src\main\java\com\kelsyfrank\learning\model\User.java
+C:\Users\Kelsy\Desktop\Resume-Cover Letters\Project-Examples\learning-delivery-platform\src\main\java\com\kelsyfrank\learning\dto\UserDTO.java
+C:\Users\Kelsy\Desktop\Resume-Cover Letters\Project-Examples\learning-delivery-platform\src\main\java\com\kelsyfrank\learning\repository\CourseRepository.java
+C:\Users\Kelsy\Desktop\Resume-Cover Letters\Project-Examples\learning-delivery-platform\src\main\java\com\kelsyfrank\learning\config\SecurityConfig.java
+C:\Users\Kelsy\Desktop\Resume-Cover Letters\Project-Examples\learning-delivery-platform\src\main\java\com\kelsyfrank\learning\dto\CourseDTO.java
+C:\Users\Kelsy\Desktop\Resume-Cover Letters\Project-Examples\learning-delivery-platform\src\main\java\com\kelsyfrank\learning\model\Course.java
+C:\Users\Kelsy\Desktop\Resume-Cover Letters\Project-Examples\learning-delivery-platform\src\main\java\com\kelsyfrank\learning\service\CourseService.java
+C:\Users\Kelsy\Desktop\Resume-Cover Letters\Project-Examples\learning-delivery-platform\src\main\java\com\kelsyfrank\learning\LearningPlatformApplication.java
+C:\Users\Kelsy\Desktop\Resume-Cover Letters\Project-Examples\learning-delivery-platform\src\main\java\com\kelsyfrank\learning\controller\CourseController.java
+C:\Users\Kelsy\Desktop\Resume-Cover Letters\Project-Examples\learning-delivery-platform\src\main\java\com\kelsyfrank\learning\controller\EnrollmentController.java
+C:\Users\Kelsy\Desktop\Resume-Cover Letters\Project-Examples\learning-delivery-platform\src\main\java\com\kelsyfrank\learning\controller\UserController.java
+C:\Users\Kelsy\Desktop\Resume-Cover Letters\Project-Examples\learning-delivery-platform\src\main\java\com\kelsyfrank\learning\service\UserService.java

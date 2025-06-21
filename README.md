@@ -8,13 +8,14 @@ A Spring Boot based REST API for delivering learning content such as courses and
 - **Spring Boot REST API** for learning content delivery
 - **User Management** with roles (currently `ADMIN`, and `STUDENT`)
 - **Course Creation** and retrieval
-- **User - Course Relaitionship** user can enroll in course, duplicates not allowed
+- **User - Course Relaitionship**: user can enroll in course (no duplicates allowed)
 - **MySQL** database integration using **JPA/Hibernate**
 - **Dockerized** with `docker-compose` for local deployment
 - **Seeded test data** on startup for rapid testing
+- **Initial Integration Testing** using Testcontainers with MySQL - see tests below
 
 **Next Steps:**
-- Testing suite
+- Full testing suite
 - Authentication (JWT or Spring Security)
 - Module/Lesson breakdowns within courses
 - Add pagination and search filters
@@ -58,7 +59,7 @@ A Spring Boot based REST API for delivering learning content such as courses and
 - Maven
 - Docker (for MySQL)
 
-### Run the Platform with Docker Compose
+### Run the Platform locally with Docker Compose
 
 This project includes a `Dockerfile` and `docker-compose.yml` to run both the Spring Boot app and MySQL together.
 
@@ -84,6 +85,29 @@ http://localhost:8080
 | App container name | (built from Dockerfile) |
 
 These are injected automatically into Spring Boot via environment variables in the `docker-compose.yml`.
+
+## Testing with Testcontainers
+This project use [Testcontainers](https://www.testcontainers.org/) for integration testing. Tests run against a real MySQL cotnainer, ensuring production-like test coverage without requiring a local DB setup.
+
+```bash
+
+# Run tests
+mvn clean test
+
+```
+Testcontainers automatically handles lifecycle and resource cleanup for each test.
+
+### Current Integration Tests
+
+| Test Class | Purpose | Status |
+|------------|---------|--------|
+| `UserControllerTest` | Verifies user-related API endpoints | WORKING |
+|| - `GET /api/users` | 🗹 |
+|| - `GET /api/users/{id}` | 🗹 |
+|| - `GET /api/users/9999` (not found case) | 🗹 |
+|*More coming soon*| *e.g. CourseControllerTest, EnrollmentsTest * | TBD |
+
+You can find this under `src/test/java/com/kelsyfrank/learning/controller`
 
 ## Author
 Kelsy Frank

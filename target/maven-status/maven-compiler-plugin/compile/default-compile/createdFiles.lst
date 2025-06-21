@@ -1,0 +1,17 @@
+com\kelsyfrank\learning\model\User$Role.class
+com\kelsyfrank\learning\model\User.class
+com\kelsyfrank\learning\model\Course.class
+com\kelsyfrank\learning\config\DataSeeder.class
+com\kelsyfrank\learning\service\UserService.class
+com\kelsyfrank\learning\repository\UserRepository.class
+com\kelsyfrank\learning\controller\UserController.class
+com\kelsyfrank\learning\model\User$UserBuilder.class
+com\kelsyfrank\learning\dto\UserDTO.class
+com\kelsyfrank\learning\controller\AuthController.class
+com\kelsyfrank\learning\dto\CourseDTO.class
+com\kelsyfrank\learning\repository\CourseRepository.class
+com\kelsyfrank\learning\controller\CourseController.class
+com\kelsyfrank\learning\controller\EnrollmentController.class
+com\kelsyfrank\learning\LearningPlatformApplication.class
+com\kelsyfrank\learning\service\CourseService.class
+com\kelsyfrank\learning\config\SecurityConfig.class
