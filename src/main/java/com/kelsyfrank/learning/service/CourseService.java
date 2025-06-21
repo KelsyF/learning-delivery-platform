@@ -5,6 +5,7 @@ import com.kelsyfrank.learning.repository.CourseRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 public class CourseService {
     private final CourseRepository repo;
@@ -17,8 +18,8 @@ public class CourseService {
         return repo.findAll();
     }
 
-    public Course getCourseById(Long id) {
-        return repo.findById(id).orElseThrow();
+    public Optional<Course> getCourseById(Long id) {
+        return repo.findById(id);
     }
 
     public Course createCourse(Course course) {

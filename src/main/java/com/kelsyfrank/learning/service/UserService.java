@@ -5,6 +5,7 @@ import com.kelsyfrank.learning.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 public class UserService {
     private final UserRepository repo;
@@ -17,8 +18,8 @@ public class UserService {
         return repo.findAll();
     }
 
-    public User getUserById(Long id) {
-        return repo.findById(id).orElseThrow();
+    public Optional<User> getUserById(Long id) {
+        return repo.findById(id);
     }
 
     public User createUser(User user) {

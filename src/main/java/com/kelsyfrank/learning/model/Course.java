@@ -1,5 +1,7 @@
 package com.kelsyfrank.learning.model;
 
+import java.util.Set;
+import java.util.HashSet;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -14,4 +16,7 @@ public class Course {
 
     private String title;
     private String description;
+
+    @ManyToMany(mappedBy = "courses")
+    private Set<User> users = new HashSet<>();
 }

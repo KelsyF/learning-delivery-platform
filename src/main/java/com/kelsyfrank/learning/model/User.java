@@ -1,8 +1,11 @@
 package com.kelsyfrank.learning.model;
 
+import java.util.Set;
+import java.util.HashSet;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.*;
+
 
 @Entity
 @Table(name = "users")
@@ -35,4 +38,12 @@ public class User {
         STUDENT,
         ADMIN
     }
+
+    @ManyToMany
+    @JoinTable(
+        name = "enrollments",
+        joinColumns = @JoinColumn(name = "user_id"),
+        inverseJoinColumns = @JoinColumn(name = "course_id")
+    )
+    private Set<Course> courses = new HashSet<>();
 }

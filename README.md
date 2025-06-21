@@ -4,16 +4,17 @@ A Spring Boot based REST API for delivering learning content such as courses and
 
 ---
 
-## Feature
+## Features
 - **Spring Boot REST API** for learning content delivery
-- **User Management** with rolse (currently `ADMIN`, and `STUDENT`)
+- **User Management** with roles (currently `ADMIN`, and `STUDENT`)
 - **Course Creation** and retrieval
+- **User - Course Relaitionship** user can enroll in course, duplicates not allowed
 - **MySQL** database integration using **JPA/Hibernate**
 - **Dockerized** with `docker-compose` for local deployment
 - **Seeded test data** on startup for rapid testing
 
 **Next Steps:**
-- User-course relationships (enrollment)
+- Testing suite
 - Authentication (JWT or Spring Security)
 - Module/Lesson breakdowns within courses
 - Add pagination and search filters

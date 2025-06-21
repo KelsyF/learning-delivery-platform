@@ -2,7 +2,9 @@ package com.kelsyfrank.learning.controller;
 
 import com.kelsyfrank.learning.model.User;
 import com.kelsyfrank.learning.service.UserService;
+import com.kelsyfrank.learning.dto.UserDTO;
 import jakarta.validation.Valid;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,13 +19,17 @@ public class UserController {
     }
 
     @GetMapping
-    public List<User> getAllUsers() {
-        return service.getAllUsers();
+    public List<UserDTO> getAllUsers() {
+        return service.getAllUsers().stream()
+                .map(user -> new UserDTO(user.getId(), user.getFullName(), user.getEmail(), user.getRole()))
+                .toList();
     }
 
     @GetMapping("/{id}")
-    public User getUser(@PathVariable Long id) {
-        return service.getUserById(id);
+    public ResponseEntity<UserDTO> getUser(@PathVariable Long id) {
+        return service.getUserById(id)
+                .map(user -> ResponseEntity.ok(new UserDTO(user.getId(), user.getFullName(), user.getEmail(), user.getRole())))
+                .orElse(ResponseEntity.notFound().build());
     }
 
     @PostMapping

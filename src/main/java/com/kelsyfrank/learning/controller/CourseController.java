@@ -2,6 +2,8 @@ package com.kelsyfrank.learning.controller;
 
 import com.kelsyfrank.learning.model.Course;
 import com.kelsyfrank.learning.service.CourseService;
+import com.kelsyfrank.learning.dto.CourseDTO;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,13 +17,17 @@ public class CourseController {
     }
 
     @GetMapping
-    public List<Course> getAllCourses() {
-        return service.getAllCourses();
+    public List<CourseDTO> getAllCourses() {
+        return service.getAllCourses().stream()
+                .map(course -> new CourseDTO(course.getId(), course.getTitle(), course.getDescription()))
+                .toList();
     }
 
     @GetMapping("/{id}")
-    public Course getCourse(@PathVariable Long id) {
-        return service.getCourseById(id);
+    public ResponseEntity<CourseDTO> getCourse(@PathVariable Long id) {
+        return service.getCourseById(id)
+                .map(course -> ResponseEntity.ok(new CourseDTO(course.getId(), course.getTitle(), course.getDescription())))
+                .orElse(ResponseEntity.notFound().build());
     }
 
     @PostMapping
