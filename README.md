@@ -105,7 +105,7 @@ Testcontainers automatically handles lifecycle and resource cleanup for each tes
 || - `GET /api/users` | 🗹 |
 || - `GET /api/users/{id}` | 🗹 |
 || - `GET /api/users/9999` (not found case) | 🗹 |
-|*More coming soon*| *e.g. CourseControllerTest, EnrollmentsTest * | TBD |
+|*More coming soon*| *e.g. CourseControllerTest, EnrollmentsTest* | TBD |
 
 You can find this under `src/test/java/com/kelsyfrank/learning/controller`
 
