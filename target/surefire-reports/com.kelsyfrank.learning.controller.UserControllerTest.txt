@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.kelsyfrank.learning.controller.UserControllerTest
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 27.54 s -- in com.kelsyfrank.learning.controller.UserControllerTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 18.27 s -- in com.kelsyfrank.learning.controller.UserControllerTest

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.kelsyfrank.learning.controller.UserControllerTest" time="18.266" tests="3" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.kelsyfrank.learning.controller.CourseControllerTest" time="25.405" tests="7" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="23"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -47,7 +47,7 @@
     <property name="localRepository" value="C:\Users\Kelsy\.m2\repository"/>
     <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
     <property name="java.io.tmpdir" value="C:\Users\Kelsy\AppData\Local\Temp\"/>
-    <property name="com.zaxxer.hikari.pool_number" value="2"/>
+    <property name="com.zaxxer.hikari.pool_number" value="1"/>
     <property name="java.version" value="23"/>
     <property name="user.dir" value="C:\Users\Kelsy\Desktop\Resume-Cover Letters\Project-Examples\learning-delivery-platform"/>
     <property name="os.arch" value="amd64"/>
@@ -64,15 +64,31 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="67.0"/>
   </properties>
-  <testcase name="shouldReturnSingleUser" classname="com.kelsyfrank.learning.controller.UserControllerTest" time="0.085">
-    <system-out><![CDATA[2025-06-27T16:50:21.627-04:00  INFO 28528 --- [           main] tc.mysql:8.0                             : Creating container for image: mysql:8.0
-2025-06-27T16:50:21.784-04:00  INFO 28528 --- [           main] tc.mysql:8.0                             : Container mysql:8.0 is starting: 33a4445b4dddc54adf6c3d38d9b5c6b54174af8f3317edbbc5748735e7aa6820
-2025-06-27T16:50:22.149-04:00  INFO 28528 --- [           main] tc.mysql:8.0                             : Waiting for database connection to become available at jdbc:mysql://localhost:55101/testdb using query 'SELECT 1'
-2025-06-27T16:50:38.002-04:00  INFO 28528 --- [           main] tc.mysql:8.0                             : Container mysql:8.0 started in PT16.3746678S
-2025-06-27T16:50:38.002-04:00  INFO 28528 --- [           main] tc.mysql:8.0                             : Container is started (JDBC URL: jdbc:mysql://localhost:55101/testdb)
-2025-06-27T16:50:38.004-04:00  INFO 28528 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.kelsyfrank.learning.controller.UserControllerTest]: UserControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2025-06-27T16:50:38.006-04:00  INFO 28528 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.kelsyfrank.learning.LearningPlatformApplication for test class com.kelsyfrank.learning.controller.UserControllerTest
-2025-06-27T16:50:38.010-04:00  INFO 28528 --- [           main] o.s.b.d.r.RestartApplicationListener     : Restart disabled due to context in which it is running
+  <testcase name="shouldReturn404ForMissingCourse" classname="com.kelsyfrank.learning.controller.CourseControllerTest" time="0.751">
+    <system-out><![CDATA[16:49:56.322 [main] INFO org.testcontainers.images.PullPolicy -- Image pull policy will be performed by: DefaultPullPolicy()
+16:49:56.330 [main] INFO org.testcontainers.utility.ImageNameSubstitutor -- Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+16:49:56.572 [main] INFO org.testcontainers.dockerclient.DockerClientProviderStrategy -- Loaded org.testcontainers.dockerclient.NpipeSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+16:49:56.804 [main] INFO org.testcontainers.dockerclient.DockerClientProviderStrategy -- Found Docker environment with local Npipe socket (npipe:////./pipe/docker_engine)
+16:49:56.805 [main] INFO org.testcontainers.DockerClientFactory -- Docker host IP address is localhost
+16:49:56.815 [main] INFO org.testcontainers.DockerClientFactory -- Connected to docker: 
+  Server Version: 28.1.1
+  API Version: 1.49
+  Operating System: Docker Desktop
+  Total Memory: 15948 MB
+16:49:56.834 [main] INFO tc.testcontainers/ryuk:0.6.0 -- Creating container for image: testcontainers/ryuk:0.6.0
+16:49:57.134 [main] INFO tc.testcontainers/ryuk:0.6.0 -- Container testcontainers/ryuk:0.6.0 is starting: 048328d59c15935204499a3eca95a4eaa8b3fd19468ed25e833f13129d0a51ad
+16:49:57.677 [main] INFO tc.testcontainers/ryuk:0.6.0 -- Container testcontainers/ryuk:0.6.0 started in PT0.8429672S
+16:49:57.684 [main] INFO org.testcontainers.utility.RyukResourceReaper -- Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+16:49:57.685 [main] INFO org.testcontainers.DockerClientFactory -- Checking the system...
+16:49:57.685 [main] INFO org.testcontainers.DockerClientFactory -- ✔︎ Docker server version should be at least 1.6.0
+16:49:57.688 [main] INFO tc.mysql:8.0 -- Creating container for image: mysql:8.0
+16:49:57.854 [main] INFO tc.mysql:8.0 -- Container mysql:8.0 is starting: 01e8fffe16655c36d1f5e9efba412525a07e0c7429242c3ba2643ddfc17a435e
+16:49:58.220 [main] INFO tc.mysql:8.0 -- Waiting for database connection to become available at jdbc:mysql://localhost:54918/testdb using query 'SELECT 1'
+16:50:14.627 [main] INFO tc.mysql:8.0 -- Container mysql:8.0 started in PT16.9387392S
+16:50:14.627 [main] INFO tc.mysql:8.0 -- Container is started (JDBC URL: jdbc:mysql://localhost:54918/testdb)
+16:50:14.708 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.kelsyfrank.learning.controller.CourseControllerTest]: CourseControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+16:50:14.829 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.kelsyfrank.learning.LearningPlatformApplication for test class com.kelsyfrank.learning.controller.CourseControllerTest
+16:50:14.952 [main] INFO org.springframework.boot.devtools.restart.RestartApplicationListener -- Restart disabled due to context in which it is running
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -82,21 +98,22 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.2.5)
 
-2025-06-27T16:50:38.030-04:00  INFO 28528 --- [           main] c.k.l.controller.UserControllerTest      : Starting UserControllerTest using Java 23 with PID 28528 (started by Kelsy in C:\Users\Kelsy\Desktop\Resume-Cover Letters\Project-Examples\learning-delivery-platform)
-2025-06-27T16:50:38.030-04:00  INFO 28528 --- [           main] c.k.l.controller.UserControllerTest      : The following 1 profile is active: "test"
-2025-06-27T16:50:38.217-04:00  INFO 28528 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-06-27T16:50:38.228-04:00  INFO 28528 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 2 JPA repository interfaces.
-2025-06-27T16:50:38.315-04:00  INFO 28528 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-06-27T16:50:38.317-04:00  INFO 28528 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-06-27T16:50:38.324-04:00  INFO 28528 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-06-27T16:50:38.326-04:00  INFO 28528 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
-2025-06-27T16:50:38.351-04:00  INFO 28528 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@22351330
-2025-06-27T16:50:38.351-04:00  INFO 28528 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
-2025-06-27T16:50:38.352-04:00  WARN 28528 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-06-27T16:50:38.352-04:00  WARN 28528 --- [           main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2025-06-27T16:50:38.416-04:00  INFO 28528 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-27T16:50:15.190-04:00  INFO 28528 --- [           main] c.k.l.controller.CourseControllerTest    : Starting CourseControllerTest using Java 23 with PID 28528 (started by Kelsy in C:\Users\Kelsy\Desktop\Resume-Cover Letters\Project-Examples\learning-delivery-platform)
+2025-06-27T16:50:15.191-04:00  INFO 28528 --- [           main] c.k.l.controller.CourseControllerTest    : The following 1 profile is active: "test"
+2025-06-27T16:50:15.806-04:00  INFO 28528 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-27T16:50:15.873-04:00  INFO 28528 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 56 ms. Found 2 JPA repository interfaces.
+2025-06-27T16:50:16.403-04:00  INFO 28528 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-27T16:50:16.463-04:00  INFO 28528 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2025-06-27T16:50:16.497-04:00  INFO 28528 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-27T16:50:16.706-04:00  INFO 28528 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-27T16:50:16.730-04:00  INFO 28528 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-27T16:50:16.902-04:00  INFO 28528 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@746e534
+2025-06-27T16:50:16.904-04:00  INFO 28528 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-27T16:50:16.936-04:00  WARN 28528 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-27T16:50:16.937-04:00  WARN 28528 --- [           main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-06-27T16:50:17.856-04:00  INFO 28528 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
 Hibernate: alter table enrollments drop foreign key FKm6ptklbuk36d0q5nb8vpwnj48
-2025-06-27T16:50:38.422-04:00  WARN 28528 --- [           main] o.h.t.s.i.ExceptionHandlerLoggedImpl     : GenerationTarget encountered exception accepting command : Error executing DDL "alter table enrollments drop foreign key FKm6ptklbuk36d0q5nb8vpwnj48" via JDBC [Table 'testdb.enrollments' doesn't exist]
+2025-06-27T16:50:17.908-04:00  WARN 28528 --- [           main] o.h.t.s.i.ExceptionHandlerLoggedImpl     : GenerationTarget encountered exception accepting command : Error executing DDL "alter table enrollments drop foreign key FKm6ptklbuk36d0q5nb8vpwnj48" via JDBC [Table 'testdb.enrollments' doesn't exist]
 
 org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table enrollments drop foreign key FKm6ptklbuk36d0q5nb8vpwnj48" via JDBC [Table 'testdb.enrollments' doesn't exist]
 	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:94) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
@@ -222,7 +239,7 @@ Caused by: java.sql.SQLSyntaxErrorException: Table 'testdb.enrollments' doesn't 
 	... 111 common frames omitted
 
 Hibernate: alter table enrollments drop foreign key FK3hjx6rcnbmfw368sxigrpfpx0
-2025-06-27T16:50:38.428-04:00  WARN 28528 --- [           main] o.h.t.s.i.ExceptionHandlerLoggedImpl     : GenerationTarget encountered exception accepting command : Error executing DDL "alter table enrollments drop foreign key FK3hjx6rcnbmfw368sxigrpfpx0" via JDBC [Table 'testdb.enrollments' doesn't exist]
+2025-06-27T16:50:17.917-04:00  WARN 28528 --- [           main] o.h.t.s.i.ExceptionHandlerLoggedImpl     : GenerationTarget encountered exception accepting command : Error executing DDL "alter table enrollments drop foreign key FK3hjx6rcnbmfw368sxigrpfpx0" via JDBC [Table 'testdb.enrollments' doesn't exist]
 
 org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table enrollments drop foreign key FK3hjx6rcnbmfw368sxigrpfpx0" via JDBC [Table 'testdb.enrollments' doesn't exist]
 	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:94) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
@@ -356,34 +373,68 @@ Hibernate: create table users (id bigint not null auto_increment, email varchar(
 Hibernate: alter table users add constraint UK_6dotkott2kjsp8vw4d0m25fb7 unique (email)
 Hibernate: alter table enrollments add constraint FKm6ptklbuk36d0q5nb8vpwnj48 foreign key (course_id) references course (id)
 Hibernate: alter table enrollments add constraint FK3hjx6rcnbmfw368sxigrpfpx0 foreign key (user_id) references users (id)
-2025-06-27T16:50:38.934-04:00  INFO 28528 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-06-27T16:50:38.970-04:00  WARN 28528 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-06-27T16:50:39.094-04:00  INFO 28528 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4bb13671, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@28d61fc, org.springframework.security.web.context.SecurityContextHolderFilter@36810c06, org.springframework.security.web.header.HeaderWriterFilter@3fde6c3b, org.springframework.web.filter.CorsFilter@3d5a6c07, org.springframework.security.web.authentication.logout.LogoutFilter@7f0e0db3, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@445dc8dc, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4015ebf1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@d22c288, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@17eb5858, org.springframework.security.web.access.ExceptionTranslationFilter@7327dba0, org.springframework.security.web.access.intercept.AuthorizationFilter@b068ddf]
-2025-06-27T16:50:39.160-04:00  INFO 28528 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2025-06-27T16:50:39.160-04:00  INFO 28528 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2025-06-27T16:50:39.161-04:00  INFO 28528 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
-2025-06-27T16:50:39.165-04:00  INFO 28528 --- [           main] c.k.l.controller.UserControllerTest      : Started UserControllerTest in 1.156 seconds (process running for 43.565)
-Hibernate: insert into users (email,full_name,password,role) values (?,?,?,?)
-Hibernate: select u1_0.id,u1_0.email,u1_0.full_name,u1_0.password,u1_0.role from users u1_0 where u1_0.id=?
-Hibernate: select u1_0.id,u1_0.email,u1_0.full_name,u1_0.password,u1_0.role from users u1_0
-Hibernate: delete from enrollments where user_id=?
-Hibernate: delete from users where id=?
+2025-06-27T16:50:18.484-04:00  INFO 28528 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-27T16:50:18.846-04:00  WARN 28528 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-27T16:50:19.372-04:00  INFO 28528 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2ca4b010, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@83b39c3, org.springframework.security.web.context.SecurityContextHolderFilter@4f7a2262, org.springframework.security.web.header.HeaderWriterFilter@7def08fc, org.springframework.web.filter.CorsFilter@1f7653ae, org.springframework.security.web.authentication.logout.LogoutFilter@3ae5cbb9, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@2100b770, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@440309c5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@50c442a5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@62f8b2f4, org.springframework.security.web.access.ExceptionTranslationFilter@bf0025d, org.springframework.security.web.access.intercept.AuthorizationFilter@1495f70]
+2025-06-27T16:50:19.781-04:00  INFO 28528 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-06-27T16:50:19.782-04:00  INFO 28528 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-06-27T16:50:19.783-04:00  INFO 28528 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2025-06-27T16:50:19.810-04:00  INFO 28528 --- [           main] c.k.l.controller.CourseControllerTest    : Started CourseControllerTest in 4.87 seconds (process running for 24.21)
+Hibernate: insert into course (description,title) values (?,?)
+Hibernate: select c1_0.id,c1_0.description,c1_0.title from course c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.description,c1_0.title from course c1_0
+Hibernate: delete from course where id=?
+]]></system-out>
+    <system-err><![CDATA[WARNING: A Java agent has been loaded dynamically (C:\Users\Kelsy\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.13\byte-buddy-agent-1.14.13.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+]]></system-err>
+  </testcase>
+  <testcase name="shouldListMultipleCourses" classname="com.kelsyfrank.learning.controller.CourseControllerTest" time="0.104">
+    <system-out><![CDATA[Hibernate: insert into course (description,title) values (?,?)
+Hibernate: insert into course (description,title) values (?,?)
+Hibernate: select c1_0.id,c1_0.description,c1_0.title from course c1_0
+Hibernate: select c1_0.id,c1_0.description,c1_0.title from course c1_0
+Hibernate: delete from course where id=?
+Hibernate: delete from course where id=?
 ]]></system-out>
   </testcase>
-  <testcase name="shouldReturn404ForMissingUser" classname="com.kelsyfrank.learning.controller.UserControllerTest" time="0.062">
-    <system-out><![CDATA[Hibernate: insert into users (email,full_name,password,role) values (?,?,?,?)
-Hibernate: select u1_0.id,u1_0.email,u1_0.full_name,u1_0.password,u1_0.role from users u1_0 where u1_0.id=?
-Hibernate: select u1_0.id,u1_0.email,u1_0.full_name,u1_0.password,u1_0.role from users u1_0
-Hibernate: delete from enrollments where user_id=?
-Hibernate: delete from users where id=?
+  <testcase name="shouldReturnCourseList" classname="com.kelsyfrank.learning.controller.CourseControllerTest" time="0.048">
+    <system-out><![CDATA[Hibernate: insert into course (description,title) values (?,?)
+Hibernate: select c1_0.id,c1_0.description,c1_0.title from course c1_0
+Hibernate: select c1_0.id,c1_0.description,c1_0.title from course c1_0
+Hibernate: delete from course where id=?
 ]]></system-out>
   </testcase>
-  <testcase name="shouldReturnUserList" classname="com.kelsyfrank.learning.controller.UserControllerTest" time="0.056">
-    <system-out><![CDATA[Hibernate: insert into users (email,full_name,password,role) values (?,?,?,?)
-Hibernate: select u1_0.id,u1_0.email,u1_0.full_name,u1_0.password,u1_0.role from users u1_0
-Hibernate: select u1_0.id,u1_0.email,u1_0.full_name,u1_0.password,u1_0.role from users u1_0
-Hibernate: delete from enrollments where user_id=?
-Hibernate: delete from users where id=?
+  <testcase name="shouldReturnSingleCourse" classname="com.kelsyfrank.learning.controller.CourseControllerTest" time="0.047">
+    <system-out><![CDATA[Hibernate: insert into course (description,title) values (?,?)
+Hibernate: select c1_0.id,c1_0.description,c1_0.title from course c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.description,c1_0.title from course c1_0
+Hibernate: delete from course where id=?
+]]></system-out>
+  </testcase>
+  <testcase name="shouldCreateNewCourse" classname="com.kelsyfrank.learning.controller.CourseControllerTest" time="0.111">
+    <system-out><![CDATA[Hibernate: insert into course (description,title) values (?,?)
+Hibernate: insert into course (description,title) values (?,?)
+Hibernate: select c1_0.id,c1_0.description,c1_0.title from course c1_0
+Hibernate: delete from course where id=?
+Hibernate: delete from course where id=?
+]]></system-out>
+  </testcase>
+  <testcase name="shouldRejectCourseWithMissingTitle" classname="com.kelsyfrank.learning.controller.CourseControllerTest" time="0.055">
+    <system-out><![CDATA[Hibernate: insert into course (description,title) values (?,?)
+Validation triggered: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<com.kelsyfrank.learning.model.Course> com.kelsyfrank.learning.controller.CourseController.createCourse(com.kelsyfrank.learning.dto.CourseRequestDTO): [Field error in object 'courseRequestDTO' on field 'title': rejected value [null]; codes [NotBlank.courseRequestDTO.title,NotBlank.title,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [courseRequestDTO.title,title]; arguments []; default message [title]]; default message [Title is required.]] 
+Hibernate: select c1_0.id,c1_0.description,c1_0.title from course c1_0
+Hibernate: delete from course where id=?
+]]></system-out>
+  </testcase>
+  <testcase name="shouldDeleteCourse" classname="com.kelsyfrank.learning.controller.CourseControllerTest" time="0.071">
+    <system-out><![CDATA[Hibernate: insert into course (description,title) values (?,?)
+Hibernate: select c1_0.id,c1_0.description,c1_0.title from course c1_0 where c1_0.id=?
+Hibernate: delete from course where id=?
+Hibernate: select c1_0.id,c1_0.description,c1_0.title from course c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.description,c1_0.title from course c1_0
 ]]></system-out>
   </testcase>
 </testsuite>

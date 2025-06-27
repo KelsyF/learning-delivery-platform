@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.kelsyfrank.learning.controller.CourseControllerTest
+-------------------------------------------------------------------------------
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 25.41 s -- in com.kelsyfrank.learning.controller.CourseControllerTest

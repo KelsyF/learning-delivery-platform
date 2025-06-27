@@ -1,3 +1,5 @@
+com\kelsyfrank\learning\exception\GlobalExceptionHandler.class
+com\kelsyfrank\learning\model\Course$CourseBuilder.class
 com\kelsyfrank\learning\model\User$Role.class
 com\kelsyfrank\learning\model\User.class
 com\kelsyfrank\learning\model\Course.class
@@ -10,8 +12,10 @@ com\kelsyfrank\learning\dto\UserDTO.class
 com\kelsyfrank\learning\controller\AuthController.class
 com\kelsyfrank\learning\dto\CourseDTO.class
 com\kelsyfrank\learning\repository\CourseRepository.class
+com\kelsyfrank\learning\dto\CourseRequestDTO$CourseRequestDTOBuilder.class
 com\kelsyfrank\learning\controller\CourseController.class
 com\kelsyfrank\learning\controller\EnrollmentController.class
 com\kelsyfrank\learning\LearningPlatformApplication.class
 com\kelsyfrank\learning\service\CourseService.class
 com\kelsyfrank\learning\config\SecurityConfig.class
+com\kelsyfrank\learning\dto\CourseRequestDTO.class

@@ -37,7 +37,7 @@ public class CourseControllerTest {
 
     @DynamicPropertySource
     static void overrideProps(DynamicPropertyRegistry registry) {
-        registry.add("spring.datasource.usrl", mysql::getJdbcUrl);
+        registry.add("spring.datasource.url", mysql::getJdbcUrl);
         registry.add("spring.datasource.username", mysql::getUsername);
         registry.add("spring.datasource.password", mysql::getPassword);
         registry.add("spring.datasource.driver-class-name", mysql::getDriverClassName);
@@ -88,7 +88,7 @@ public class CourseControllerTest {
 
     @Test
     void shouldCreateNewCourse() throws Exception {
-        String newCourseJson= """
+        String newCourseJson = """
                 {
                     "title": "New Course",
                     "description": "Newly created course"
@@ -100,5 +100,38 @@ public class CourseControllerTest {
                         .content(newCourseJson))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.title", is("New Course")));
+    }
+
+    @Test
+    void shouldRejectCourseWithMissingTitle() throws Exception {
+        String invalidCourseJson = """
+                {
+                    "description": "No title course"
+                }
+                """;
+
+        mockMvc.perform(post("/api/courses")
+                        .contentType("application/json")
+                        .content(invalidCourseJson))
+                .andExpect(status().isBadRequest());
+    }
+
+    @Test
+    void shouldDeleteCourse() throws Exception {
+        mockMvc.perform(delete("/api/courses/" + testCourseId))
+                .andExpect(status().isOk());
+
+        // Confirm original course was deleted
+        mockMvc.perform(get("/api/courses/" + testCourseId))
+                .andExpect(status().isNotFound());
+    }
+
+    @Test
+    void shouldListMultipleCourses() throws Exception {
+        courseRepo.save(Course.builder().title("Course 2 Electric Boogaloo").description("A second course to test").build());
+
+        mockMvc.perform(get("/api/courses"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$", hasSize(2)));
     }
 }

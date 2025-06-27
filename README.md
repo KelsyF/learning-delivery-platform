@@ -7,8 +7,10 @@ A Spring Boot based REST API for delivering learning content such as courses and
 ## Features
 - **Spring Boot REST API** for learning content delivery
 - **User Management** with roles (currently `ADMIN`, and `STUDENT`)
-- **Course Creation** and retrieval
+- **Course Management** with creation, retrieval, and deletion
 - **User - Course Relaitionship**: user can enroll in course (no duplicates allowed)
+- **Validated API Inputs** using DTOs and `@Valid`
+- **Global Error Handling** with `@RestControllerAdvice`
 - **MySQL** database integration using **JPA/Hibernate**
 - **Dockerized** with `docker-compose` for local deployment
 - **Seeded test data** on startup for rapid testing
@@ -33,6 +35,7 @@ A Spring Boot based REST API for delivering learning content such as courses and
 | Dev Tools | Lombok, Spring Boot DevTools |
 | Build Tool | Maven |
 | Container | Docker, Docker Compose |
+| Testing | JUnit5, MockMvc, Testcontainers |
 
 ---
 
@@ -61,7 +64,7 @@ A Spring Boot based REST API for delivering learning content such as courses and
 
 ### Run the Platform locally with Docker Compose
 
-This project includes a `Dockerfile` and `docker-compose.yml` to run both the Spring Boot app and MySQL together.
+Included within is a `Dockerfile` and `docker-compose.yml` to run both the Spring Boot app and MySQL together.
 
 ### Steps
 
@@ -87,7 +90,7 @@ http://localhost:8080
 These are injected automatically into Spring Boot via environment variables in the `docker-compose.yml`.
 
 ## Testing with Testcontainers
-This project use [Testcontainers](https://www.testcontainers.org/) for integration testing. Tests run against a real MySQL cotnainer, ensuring production-like test coverage without requiring a local DB setup.
+This project use [Testcontainers](https://www.testcontainers.org/) for integration testing. Tests run against a real MySQL container, ensuring production-like test coverage without requiring a local DB setup.
 
 ```bash
 
@@ -105,9 +108,17 @@ Testcontainers automatically handles lifecycle and resource cleanup for each tes
 || - `GET /api/users` | 🗹 |
 || - `GET /api/users/{id}` | 🗹 |
 || - `GET /api/users/9999` (not found case) | 🗹 |
-|*More coming soon*| *e.g. CourseControllerTest, EnrollmentsTest* | TBD |
+| `CourseControllerTest` | Validates course-related API endpoints | WORKING |
+|| - `GET /api/courses` | 🗹 |
+|| - `GET /api/courses/{id}` | 🗹 |
+|| - `GET /api/courses/9999` (not found) | 🗹 |
+|| - `POST /api/courses` (valid input) | 🗹 |
+|| - `POST /api/courses` (invalid input) | 🗹 |
+|| - `DELETE /api/courses/{id}` | 🗹 |
+|| - Multiple course creation/listing | 🗹 |
+|*More coming soon*| *e.g. EnrollmentsTest, Authentication* | TBD |
 
-You can find this under `src/test/java/com/kelsyfrank/learning/controller`
+Test classes can be found under: `src/test/java/com/kelsyfrank/learning/controller`
 
 ## Author
 Kelsy Frank

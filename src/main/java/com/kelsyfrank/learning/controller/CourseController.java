@@ -2,7 +2,11 @@ package com.kelsyfrank.learning.controller;
 
 import com.kelsyfrank.learning.model.Course;
 import com.kelsyfrank.learning.service.CourseService;
+import com.kelsyfrank.learning.dto.CourseRequestDTO;
 import com.kelsyfrank.learning.dto.CourseDTO;
+
+import jakarta.validation.Valid;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -31,8 +35,14 @@ public class CourseController {
     }
 
     @PostMapping
-    public Course createCourse(@RequestBody Course course) {
-        return service.createCourse(course);
+    public ResponseEntity<Course> createCourse(@Valid @RequestBody CourseRequestDTO courseRequest) {
+        Course course = Course.builder()
+                .title(courseRequest.getTitle())
+                .description(courseRequest.getDescription())
+                .build();
+        
+        Course newCourse = service.createCourse(course);
+        return ResponseEntity.ok(newCourse);
     }
 
     @DeleteMapping("/{id}")

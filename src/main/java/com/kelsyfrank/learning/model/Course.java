@@ -1,8 +1,12 @@
 package com.kelsyfrank.learning.model;
 
 import java.util.Set;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.HashSet;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
 @Entity
@@ -15,8 +19,10 @@ public class Course {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank(message = "Title is required.")
+    @JsonProperty(required = true)
     private String title;
-    
+
     private String description;
 
     @ManyToMany(mappedBy = "courses")
